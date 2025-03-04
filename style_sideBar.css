@@ -1,0 +1,34 @@
+/**
+ style_sideBar.css
+ Created by 방현석 on 2/19/25.
+ */
+
+/* 우측 사이드바에 간헐적으로 생기는 New tab 비활성화 */
+.workspace-tab-header[aria-label="New tab"] {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* 좌측 사이드바에서 선택한 파일 (is-active) 테두리 스타일 */
+.tree-item-self.nav-file-title.is-active {
+    border: 1px solid #ff66b2 !important;  /* 분홍색 테두리 */
+    border-radius: 5px;  /* 모서리 둥글게 */
+    padding: 5px;  /* 내부 여백 */
+}
+
+
+/* 🎯 활성화된 탭 (`mod-active`) 테두리 스타일 */
+.workspace-tabs.mod-active {
+    border: 1px solid #ff66b2 !important;  /* 분홍색 테두리 */
+    border-radius: 5px;  /* 모서리 둥글게 */
+    padding: 5px;  /* 내부 여백 */
+}
+
+/* 🎯 사이드바 토글 버튼 숨기기 */
+.sidebar-toggle-button.mod-right {
+    display: none !important;
+}

@@ -1,0 +1,325 @@
+/**
+ style_table.css
+ Created by 방현석 on 2/19/25.
+ */
+
+
+/* ================================ */
+/* 🎨 테이블 스타일 */
+/* ================================ */
+
+
+/* 🎨 세로 병합된 셀 스타일 */
+td[rowspan] {
+  vertical-align: middle !important;
+}
+
+/* 🎨 가로 병합된 셀 스타일 */
+td[colspan] {
+  background-color: #f9c5d180 !important; /* 연한 핑크 */
+}
+
+/* 🎨 세로 & 가로 병합된 셀 스타일 */
+td[rowspan][colspan] {
+  background-color: #cce5ff80 !important; /* 연한 하늘색 */
+}
+
+/* 🎨 가로 병합이 없는 세로 병합 셀 */
+td[rowspan]:not([colspan]) {
+  background-color: #d5c5f980 !important; /* 연한 보라 */
+}
+
+/* 줄바꿈 */
+/* 🎨 테이블의 1, 2번째 열 줄바꿈 방지 */
+td[col-index="0"], td[col-index="1"] {
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+/* 🎨 표를 노트 가로 크기에 맞게 적용 */
+table {
+  table-layout: auto !important;
+  width: 80%;
+}
+
+
+
+/* ================================== */
+/* 📌 캘린더 헤더 및 테이블 스타일 */
+/* ================================== */
+
+/* 헤더 연도 색상 */
+.year.svelte-1vwr9dd {
+    color: #d5c5f990 !important; /* 텍스트 색상을 빨간색으로 변경 */
+    font-weight: bold !important; /* 볼드 처리 */
+}
+
+/* 🎨 캘린더 헤더 좌우 상단 모서리 둥글게 */
+.workspace-leaf-content[data-type="calendar"] thead th:first-child {
+    border-top-left-radius: 5px !important; /* 왼쪽 상단 모서리 둥글게 */
+}
+
+.workspace-leaf-content[data-type="calendar"] thead th:last-child {
+    border-top-right-radius: 5px !important; /* 오른쪽 상단 모서리 둥글게 */
+}
+
+/* 🎨 캘린더 바디 마지막 행 좌우 하단 모서리 둥글게 */
+.workspace-leaf-content[data-type="calendar"] tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 5px !important; /* 왼쪽 하단 모서리 둥글게 */
+}
+
+.workspace-leaf-content[data-type="calendar"] tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 5px !important; /* 오른쪽 하단 모서리 둥글게 */
+}
+
+/* 🎨 캘린더 전체 테두리 스타일 */
+.workspace-leaf-content[data-type="calendar"] table.calendar {
+    border-collapse: separate; /* 셀 테두리 간격 유지 */
+    border-spacing: 0; /* 테두리 간격 없애기 */
+    border: 2px solid #999 !important; /* 테두리 색상 */
+    border-radius: 10px !important; /* 전체 테이블 둥글게 */
+    overflow: hidden; /* 내부 요소가 넘치지 않도록 */
+}
+
+/* 🎨 캘린더에서 <thead> 전체 배경색 적용 */
+.workspace-leaf-content[data-type="calendar"] thead {
+  background-color: #FFDDC1 !important; /* 연한 오렌지색 */
+}
+
+/* 🎨 캘린더에서 요일 헤더 (Mon, Tue, ...) 텍스트 색상 */
+.workspace-leaf-content[data-type="calendar"] thead th {
+  color: #333 !important; /* 검정 */
+  font-weight: bold; /* 볼드 */
+  text-align: center;
+  padding: 5px;
+}
+
+
+/* =================================== */
+/* 📌 캘린더 주 번호(week-num) 스타일 */
+/* =================================== */
+
+/* 🎨 캘린더에서 "주 번호(week-num)"가 있는 <td>에 라이트 그레이 배경 적용 */
+.workspace-leaf-content[data-type="calendar"] td:has(.week-num) {
+/*    background-color: #F0F0F0 !important;  /*라이트 그레이*/ */
+    color: #000000 !important; /* 검정 */
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
+/* ===================================== */
+/* 📌 캘린더 테이블 외곽선 및 패딩 설정 */
+/* ===================================== */
+
+/* 🎨 캘린더 테이블 전체에 외곽선 추가 (둥글게 & 패딩 추가) */
+.workspace-leaf-content[data-type="calendar"] table.calendar {
+    border-collapse: separate; /* 셀 테두리를 분리 */
+    border: 2px solid #999 !important; /* 테두리 색상 (회색) */
+    border-radius: 10px; /* 테이블 모서리 둥글게 */
+    padding: 8px; /* 내부 여백 */
+    overflow: hidden; /* 둥근 테두리 유지 */
+}
+
+
+/* =================================== */
+/* 📌 캘린더 오늘 날짜(today) 강조 */
+/* =================================== */
+
+
+/* 🎨 캘린더에서 "오늘 날짜"를 빨강 & 볼드로 */
+.workspace-leaf-content[data-type="calendar"] .day.today {
+  color: #FF0000 !important; /* 빨강 */
+  font-weight: bold !important; /* 볼드 */
+}
+
+/* 🎨 캘린더 - "활성화 날짜"*/
+.day.active {
+    background-color: #F5A9BC !important; /* 배경색 초록 */
+    color: white !important; /* 글자색 흰색 (가독성 개선) */
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 5px; /* 내부 여백 추가 */
+}
+
+
+/* ================================== */
+/* 📌 커스텀 CSS 스타일 */
+/* ================================== */
+
+
+/* =================================== */
+/* 📌 .style-dailyNote  */
+/* =================================== */
+
+
+/* 🎯 헤더 텍스트 정렬 */
+.style-dailyNote #obsidian-sheets-parsed th,
+.style-dailyNote #obsidian-sheets-parsed td[row-index="2"] {
+    text-align: center !important;  /* 가로 가운데 정렬 */
+    vertical-align: middle !important;  /* 세로 가운데 정렬 */
+    color: white !important;  /* 글자 색상: 하얀색 */
+}
+
+/* 🎯 col-index="0"인 모든 셀을 기본적으로 빨간색 */
+.style-dailyNote #obsidian-sheets-parsed td[col-index="0"] {
+    color: red !important;
+    font-weight: bold !important;  /* 볼드 처리 */
+    text-align: center !important;
+}
+
+/* 🎯 row-index="2"인 경우에는 예외 (하얀색 유지) */
+.style-dailyNote #obsidian-sheets-parsed td[row-index="2"][col-index="0"] {
+    color: white !important;
+}
+
+
+
+
+/* 🎨 Dataview 테이블에서 "파일명" 열의 색상을 빨간색으로 변경 */
+/*.color-row {*/
+/*    color: red !important;*/
+/*    font-weight: bold !important;*/
+/*}*/
+
+
+
+/* ```dataview*/
+/* TABLE without ID*/
+/* */
+/* "<span class='color-row'>" + file.name + "</span>" as "파일명"*/
+/* */
+/* */
+/* ```*/
+
+/* 🎯 "no-headingColor" 클래스를 가진 노트에서만 헤더 색상을 하얀색으로 변경 */
+.no-headingColor .HyperMD-header-1,
+.no-headingColor .HyperMD-header-2,
+.no-headingColor .HyperMD-header-3,
+.no-headingColor .HyperMD-header-4,
+.no-headingColor .HyperMD-header-5,
+.no-headingColor .HyperMD-header-6 {
+    color: white !important; /* 텍스트 색상 하얀색 */
+}
+
+
+
+/* =================================== */
+/* 📌 .style-projectInfo  */
+/* =================================== */
+
+
+/* 📌 `style-projectInfo` 적용된 테이블 스타일 */
+.style-projectInfo #obsidian-sheets-parsed {
+    font-size: 13px !important;  /* 글자 크기 작게 고정 */
+}
+
+/* 📌 가장 왼쪽 열 설정 */
+.style-projectInfo #obsidian-sheets-parsed td:first-child {
+    text-align: center !important;  /* 가로 가운데 정렬 */
+    vertical-align: middle !important;  /* 세로 가운데 정렬 */
+    white-space: nowrap !important;  /* 줄바꿈 방지 */
+    width: 1% !important;  /* 가능한 최소 너비 설정 */
+}
+
+
+/* 📌 테이블 헤더 스타일 */
+.style-projectInfo #obsidian-sheets-parsed th {
+    text-align: center !important;  /* 가로 가운데 정렬 */
+    vertical-align: middle !important;  /* 세로 가운데 정렬 */
+    color: white !important;  /* 글자 색상: 하얀색 */
+    background-color: #444 !important;  /* 배경색: 어두운 회색 */
+    font-weight: bold !important;  /* 볼드 처리 */
+    padding: 6px 10px !important;  /* 패딩 */
+}
+
+/* 📌 특정 행 스타일 (row-index="2") */
+.style-projectInfo #obsidian-sheets-parsed td[row-index="2"] {
+    text-align: center !important;  /* 가로 가운데 정렬 */
+    vertical-align: middle !important;  /* 세로 가운데 정렬 */
+    color: white !important;  /* 글자 색상: 하얀색 */
+    background-color: #555 !important;  /* 배경색: 좀 더 밝은 회색 */
+    font-weight: bold !important;  /* 볼드 처리 */
+}
+
+/* 📌 일반 셀 스타일 */
+.style-projectInfo #obsidian-sheets-parsed td {
+    font-size: 12px !important;  /* 글자 크기 */
+    padding: 4px 8px !important;  /* 내부 여백 */
+}
+
+/* 📌 링크 스타일 */
+.style-projectInfo #obsidian-sheets-parsed a {
+    font-size: 12px !important;  /* 링크 크기 조정 */
+    color: #ffcc00 !important;  /* 노란색 링크 */
+}
+
+/* 📌 span 내부 글자 크기 */
+.style-projectInfo #obsidian-sheets-parsed span {
+    font-size: 12px !important;
+}
+
+
+
+
+/* =================================== */
+/* 📌 .style-projectInfo  */
+/* =================================== */
+
+
+
+/* 🎨 .style-plainNote 테이블 스타일 (반응형) */
+.style-plainNote #obsidian-sheets-parsed {
+    width: 90% !important;  /* 기본적으로 90% 차지 */
+    max-width: 1200px !important;  /* 최대 너비 제한 */
+    margin: 0 auto !important;  /* 가로 중앙 정렬 */
+    border-collapse: collapse !important; /* 테두리 겹치기 */
+    overflow-x: auto !important; /* 가로 스크롤 허용 (작은 화면에서) */
+}
+
+/* 🎨 테이블 헤더 스타일 */
+.style-plainNote #obsidian-sheets-parsed th {
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #444 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    white-space: nowrap !important; /* 헤더는 줄바꿈 방지 */
+}
+
+/* 🎨 테이블 셀 스타일 */
+.style-plainNote #obsidian-sheets-parsed td {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 8px !important;
+    white-space: normal !important; /* 줄바꿈 허용 */
+    overflow-wrap: break-word !important; /* 단어 단위로 줄바꿈 */
+}
+
+/* 🎯 0번 열: 가로 (텍스트 크기만큼 자동 조정) */
+.style-plainNote #obsidian-sheets-parsed th[col-index="0"],
+.style-plainNote #obsidian-sheets-parsed td[col-index="0"] {
+    width: auto !important;  /* 자동 너비 조정 */
+    max-width: none !important;  /* 최대 너비 제한 해제 */
+    white-space: nowrap !important; /* 줄바꿈 방지 (텍스트 크기 유지) */
+}
+
+/* 🎯 1번 열: 간단한 텍스트 (중간 크기) */
+.style-plainNote #obsidian-sheets-parsed th[col-index="1"],
+.style-plainNote #obsidian-sheets-parsed td[col-index="1"] {
+    min-width: 150px !important;
+    max-width: 25% !important; /* max-width 30% → 25%로 조정 */
+}
+
+/* 🎯 2~4번 열: 반응형 크기 */
+.style-plainNote #obsidian-sheets-parsed th[col-index="2"],
+.style-plainNote #obsidian-sheets-parsed th[col-index="3"],
+.style-plainNote #obsidian-sheets-parsed th[col-index="4"],
+.style-plainNote #obsidian-sheets-parsed td[col-index="2"],
+.style-plainNote #obsidian-sheets-parsed td[col-index="3"],
+.style-plainNote #obsidian-sheets-parsed td[col-index="4"] {
+    min-width: 180px !important;
+    max-width: 22% !important; /* max-width 25% → 22%로 조정 */
+}

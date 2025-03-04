@@ -1,0 +1,53 @@
+/**
+ style_codeBlock.css
+ Created by 방현석 on 2/19/25.
+ */
+
+
+/**
+ style_codeBlock.css
+ Created by 방현석 on 2/19/25.
+ */
+
+/* === 편집 모드 (인라인 코드만) === */
+/* 코드 블럭이 편집 모드일 때 적용되는 스타일 */
+.markdown-source-view span.cm-inline-code {
+    color: #d63384 !important; /* 글자색: 분홍색 */
+    background-color: #f6f1c6 !important; /* 배경색: 연한 레몬색 */
+    font-weight: bold !important; /* 볼드 적용 */
+    padding: 2px 4px !important; /* 내부 여백 추가 */
+    border-radius: 4px; /* 모서리 둥글게 */
+}
+
+/* === 읽기 모드 (인라인 코드만) === */
+/* 일반 문단 내 코드 블럭 스타일 */
+.markdown-preview-view p code {
+    color: #d63384 !important; /* 글자색: 분홍색 */
+    background-color: #f6f1c6 !important; /* 배경색: 연한 레몬색 */
+    font-weight: bold !important; /* 볼드 적용 */
+    padding: 2px 4px !important; /* 내부 여백 추가 */
+    border-radius: 4px; /* 모서리 둥글게 */
+}
+
+/* === 모든 인라인 코드 블럭에 동일한 스타일 적용 === */
+/* 단락(p), 볼드(strong) 태그 내부 코드 블럭 스타일 */
+.markdown-preview-view p code,
+.markdown-preview-view strong code {
+    color: #d63384 !important; /* 글자색: 분홍색 */
+    background-color: #f6f1c6 !important; /* 배경색: 연한 레몬색 */
+    font-weight: bold !important; /* 볼드 적용 */
+    padding: 2px 4px !important; /* 내부 여백 추가 */
+    border-radius: 4px; /* 모서리 둥글게 */
+}
+
+/* === 리스트 요소에도 동일한 스타일 적용 === */
+/* 목록(li) 내부 코드 블럭도 동일한 스타일을 적용 */
+.markdown-preview-view p code,
+.markdown-preview-view strong code,
+.markdown-preview-view li code {
+    color: #d63384 !important; /* 글자색: 분홍색 */
+    background-color: #f6f1c6 !important; /* 배경색: 연한 레몬색 */
+    font-weight: bold !important; /* 볼드 적용 */
+    padding: 2px 4px !important; /* 내부 여백 추가 */
+    border-radius: 4px; /* 모서리 둥글게 */
+}

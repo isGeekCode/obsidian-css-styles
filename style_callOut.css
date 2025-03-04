@@ -1,0 +1,37 @@
+/*/***/
+/* style_callOut.css*/
+/* Created by 방현석 on 2/19/25.*/
+/* */*/
+/**/
+/**/
+/*/* ================================= */*/
+/*/* 📌 .style-callOut - data-callout="a" 전용 스타일 */*/
+/*/* ================================= */*/
+/**/
+/*/* ================================= */*/
+/*/* 📌 .style-callOut - data-callout="a" 전용 스타일 */*/
+/*/* ================================= */*/
+/**/
+/*.style-callOut .callout[data-callout="a"] {*/
+/*    background-color: rgba(230, 255, 230, 0.8) !important; /* 연한 초록 + 투명도 80% */*/
+/*    border-left: 4px solid rgba(102, 204, 102, 0.9) !important; /* 진한 초록 + 살짝 투명 */*/
+/*    padding: 10px !important;*/
+/*}*/
+/**/
+/*/* 🎯 콜아웃 타이틀 스타일 */*/
+/*.style-callOut .callout[data-callout="a"] .callout-title {*/
+/*    background-color: rgba(153, 230, 153, 0.85) !important; /* 중간 초록 + 투명도 85% */*/
+/*    color: #004d00 !important; /* 글자색 어두운 초록 */*/
+/*    font-weight: bold !important;*/
+/*}*/
+/**/
+/*/* 🎯 콜아웃 내용 스타일 */*/
+/*.style-callOut .callout[data-callout="a"] .callout-content {*/
+/*    color: #006600 !important; /* 내용 글자색 진한 초록 */*/
+/*}*/
+/**/
+/*/* 🎯 아이콘도 초록색으로 */*/
+/*.style-callOut .callout[data-callout="a"] .callout-icon svg {*/
+/*    stroke: #009900 !important; /* 아이콘 선 색상 */*/
+/*}*/
+/**/

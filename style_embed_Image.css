@@ -1,0 +1,168 @@
+/**
+ style_embed_image.css
+ Created by 방현석 on 2/19/25.
+ */
+
+body {
+  font-family: Adobe Clean UX, MARU Buri Beta, monospace;;
+}
+
+.theme-dark, .theme-light {
+  --default-font: Actor, MARU Buri Beta, monospace;
+  --font-family-editor: Actor, MARU Buri Beta, monospace;
+}
+strong{
+  font-weight: 900 !important;
+}
+
+/* image center align */
+img[alt*="center"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* image right align */
+img[alt*="left"] {
+  display: block;
+  margin-left: 0;        /* 이미지 왼쪽 여백 */
+  margin-right: 15px;    /* 텍스트와의 오른쪽 여백 */
+  float: left;
+  clear: left;
+}
+
+/* image right align with margin */
+img[alt*="right"] {
+  display: block;
+  margin-left: 15px;     /* 텍스트와의 왼쪽 여백 */
+  margin-right: 0;       /* 이미지 오른쪽 여백 */
+  float: right;
+  clear: right;
+}
+
+
+
+/* 기본적으로 이미지 최대 너비 설정 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 🎯 사용자가 `wrXX` 형식으로 크기 지정 (오른쪽 정렬 + XX% 크기) */
+img[alt*="wr10"] { max-width: 10% !important; }
+img[alt*="wr20"] { max-width: 20% !important; }
+img[alt*="wr30"] { max-width: 30% !important; }
+img[alt*="wr40"] { max-width: 40% !important; }
+img[alt*="wr50"] { max-width: 50% !important; }
+img[alt*="wr60"] { max-width: 60% !important; }
+img[alt*="wr70"] { max-width: 70% !important; }
+img[alt*="wr80"] { max-width: 80% !important; }
+img[alt*="wr90"] { max-width: 90% !important; }
+
+
+/*/* 🎯 컨테이너 설정 (이미지는 오른쪽, 텍스트는 왼쪽) */*/
+/*.imgTextStack {*/
+/*  display: flex;*/
+/*  align-items: center; /* 세로 중앙 정렬 */*/
+/*  justify-content: space-between; /* 좌우 정렬 */*/
+/*  gap: 20px; /* 간격 조정 */*/
+/*  width: 100%; /* 전체 너비 */*/
+/*  flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */*/
+/*}*/
+
+
+
+
+/* 🎯 왼쪽 텍스트 영역 */
+.textItem {
+  flex: 1; /* 텍스트 영역이 자동 크기 조정 */
+  min-width: 200px; /* 최소 너비 설정 */
+  max-width: 50%; /* 최대 너비 제한 */
+  display: flex;
+  align-items: center;
+}
+
+/* 🎯 내부 텍스트 블록 */
+.textItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.imgStack {
+  display: flex;
+  justify-content: center;  /* 가운데 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 1px; /* 이미지 간격 */
+}
+
+.imgStack img {
+  width: 30%; /* 3개가 한 줄에 들어오도록 설정 */
+  height: auto;
+}
+
+/* 🎯 이미지 2개씩 가로 정렬 */
+.imgStack-2 {
+  display: flex;
+  justify-content: space-between; /* 균등 배치 */
+  gap: 10px;
+  flex-wrap: wrap; /* 넘치면 다음 줄로 */
+  max-width: 800px; /* 최대 너비 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+.imgStack-2 img {
+  width: calc(100% / 2 - 10px); /* 2개씩 정렬 */
+  height: auto;
+}
+
+/* 🎯 이미지 3개씩 가로 정렬 */
+.imgStack-3 {
+  display: flex;
+  justify-content: space-between; /* 균등 배치 */
+  gap: 10px;
+  flex-wrap: wrap; /* 넘치면 다음 줄로 */
+  max-width: 1200px; /* 최대 너비 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+.imgStack-3 img {
+  width: calc(100% / 3 - 10px); /* 3개씩 정렬 */
+  height: auto;
+}
+
+/* 🎯 이미지 4개씩 가로 정렬 */
+.imgStack-4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.imgStack-4 img {
+  width: calc(100% / 4 - 10px); /* 4개씩 정렬 */
+  height: auto;
+}
+
+/* 🎯 컨테이너 설정 (이미지는 오른쪽, 텍스트는 왼쪽) */
+.imgTextStack {
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: space-between; /* 좌우 정렬 */
+  gap: 10px; /* 간격을 10px로 줄이기 */
+  width: 100%; /* 전체 너비 */
+  flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */
+}
+
+/* 🎯 오른쪽 이미지 컨테이너 (2x2 배치) */
+.imgStack-22 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2개씩 배치 */
+  gap: 5px; /* 이미지 간격을 5px로 줄이기 */
+  flex-basis: 40%; /* 컨테이너 크기 조정 */
+  max-width: 600px; /* 최대 너비 제한 */
+}
+
